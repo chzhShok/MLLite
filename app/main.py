@@ -14,9 +14,7 @@ app.mount("/static", StaticFiles(directory="app/static"), name="static")
 
 templates = Jinja2Templates(directory="app/templates")
 
-with open(
-        f"/Users/evailcenko/Desktop/Extra/MLLite Газпром/project/{MODEL_NAME}", "rb"
-) as file:
+with open(f"{MODEL_NAME}", "rb") as file:
     model = joblib.load(file)
 
 
