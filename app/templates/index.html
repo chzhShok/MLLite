@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма ввода данных</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script>
+        function toggleCheckboxAndTextColorBalcony() {
+            var checkbox = document.getElementById("balcony");
+            var text = document.querySelector('.button-checkbox-balcony');
+            checkbox.checked = !checkbox.checked; // Переключаем состояние чекбокса
+            text.style.backgroundColor = checkbox.checked ? '#4334B2' : '#597CD1'; // Изменяем цвет текста в зависимости от состояния чекбокса
+        }
+
+        function toggleCheckboxAndTextColorElevator() {
+            var checkbox = document.getElementById("passenger_elevator");
+            var text = document.querySelector('.button-checkbox-elevator');
+            checkbox.checked = !checkbox.checked; // Переключаем состояние чекбокса
+            text.style.backgroundColor = checkbox.checked ? '#4334B2' : '#597CD1'; // Изменяем цвет текста в зависимости от состояния чекбокса
+        }
+
+        function toggleCheckboxAndTextColorComplete() {
+            var checkbox = document.getElementById("isComplete");
+            var text = document.querySelector('.button-checkbox-complete');
+            checkbox.checked = !checkbox.checked; // Переключаем состояние чекбокса
+            text.style.backgroundColor = checkbox.checked ? '#4334B2' : '#597CD1'; // Изменяем цвет текста в зависимости от состояния чекбокса
+        }
+
+        function toggleCheckboxAndTextColorApartments() {
+            var checkbox = document.getElementById("is_apartments");
+            var text = document.querySelector('.button-checkbox-apartments');
+            checkbox.checked = !checkbox.checked; // Переключаем состояние чекбокса
+            text.style.backgroundColor = checkbox.checked ? '#4334B2' : '#597CD1'; // Изменяем цвет текста в зависимости от состояния чекбокса
+        }
+
+        function toggleCheckboxAndTextColorAuction() {
+            var checkbox = document.getElementById("is_auction");
+            var text = document.querySelector('.button-checkbox-auction');
+            checkbox.checked = !checkbox.checked; // Переключаем состояние чекбокса
+            text.style.backgroundColor = checkbox.checked ? '#4334B2' : '#597CD1'; // Изменяем цвет текста в зависимости от состояния чекбокса
+        }
+
+        function toggleCheckboxAndTextColorMetro() {
+            var checkbox = document.getElementById("is_metro");
+            var text = document.querySelector('.button-checkbox-metro');
+            checkbox.checked = !checkbox.checked; // Переключаем состояние чекбокса
+            text.style.backgroundColor = checkbox.checked ? '#4334B2' : '#597CD1'; // Изменяем цвет текста в зависимости от состояния чекбокса
+
+            var metroMinutesInput = document.getElementById("m_minute");
+            metroMinutesInput.required = checkbox.checked;
+        }
+    </script>
+</head>
+<body>
+    <div class="form-wrapper">
+        <div class="form-header">
+            <h1>Введите данные для предсказания цены на недвижимость</h1>
+        </div>
+
+        <div class="form-container">
+            <form action="result" method="post">
+                <div class="select-container">
+                    <select id="region" name="region" class="custom-select" required>
+                        <option value="">Выберите город</option>
+                        <option value="Москва">Москва</option>
+                        <option value="Санкт-Петербург">Санкт-Петербург</option>
+                        <option value="Новосибирск">Новосибирск</option>
+                        <option value="Екатеринбург">Екатеринбург</option>
+                        <option value="Нижний Новгород">Нижний Новгород</option>
+                        <option value="Казань">Казань</option>
+                    </select>
+                </div>
+
+                <input type="number" id="total_area" name="total_area" min="0" step="any" placeholder="Общая площадь квартиры" required><br><br>
+
+                <div class="input-fields-container">
+                    <div class="input-field">
+                        <input type="number" id="kitchen_area" name="kitchen_area" min="0" step="any" placeholder="Площадь кухни" required><br><br>
+                    </div>
+
+                    <div class="input-field">
+                        <input type="number" id="living_area" name="living_area" min="0" step="any" placeholder="Площадь зала" required><br><br>
+                    </div>
+                </div>
+
+                <input type="number" id="rooms_count" name="rooms_count" min="0" max="100" placeholder="Количество комнат" required><br><br>
+
+                <div class="input-fields-container">
+                    <div class="input-field">
+                        <input type="number" id="floor" name="floor" min="0" max="500" placeholder="Этаж" required><br><br>
+                    </div>
+
+                    <div class="input-field">
+                        <input type="number" id="floors_number" name="floors_number" min="1" max="500" placeholder="Количество этажей в доме" required><br><br>
+                    </div>
+                </div>
+
+                <div class="select-container">
+                    <select id="house_material" name="house_material" class="custom-select" required>
+                        <option value="">Выберите тип дома</option>
+                        <option value="Монолитный">Монолитный</option>
+                        <option value="Кирпичный">Кирпичный</option>
+                        <option value="Кирпично-монолитный">Кирпично-монолитный</option>
+                        <option value="Панельный">Панельный</option>
+                        <option value="Сталинский">Сталинский</option>
+                        <option value="Блочный">Блочный</option>
+                        <option value="Старый">Старый</option>
+                        <option value="Деревянный">Деревянный</option>
+                        <option value="Газосиликатный блок">Газосиликатный блок</option>
+                    </select>
+                </div>
+
+                <div class="input-fields-container">
+                    <div class="input-field">
+                        <label class="button-checkbox-complete button-checkbox-block" for="isComplete" onclick="toggleCheckboxAndTextColorComplete()">
+                            <input type="checkbox" id="isComplete" name="isComplete">
+                            <span class="button-text">Постройка дома завершена</span>
+                        </label><br>
+                    </div>
+
+                    <div class="input-field">
+                        <label class="button-checkbox-balcony button-checkbox-block" for="balcony" onclick="toggleCheckboxAndTextColorBalcony()">
+                            <input type="checkbox" id="balcony" name="balcony">
+                            <span class="button-text">Есть балкон</span>
+                        </label><br>
+                    </div>
+                </div>
+
+                <div class="input-fields-container">
+                    <div class="input-field">
+                        <label class="button-checkbox-elevator button-checkbox-block" for="passenger_elevator" onclick="toggleCheckboxAndTextColorElevator()">
+                            <input type="checkbox" id="passenger_elevator" name="passenger_elevator">
+                            <span class="button-text">Есть пассажирский лифт</span>
+                        </label><br>
+                    </div>
+
+                    <div class="input-field">
+                        <label class="button-checkbox-apartments button-checkbox-block" for="is_apartments" onclick="toggleCheckboxAndTextColorApartments()">
+                            <input type="checkbox" id="is_apartments" name="is_apartments">
+                            <span class="button-text">Апартаменты</span>
+                        </label><br>
+                    </div>
+                </div>
+
+                <div class="input-fields-container">
+                    <div class="input-field">
+                        <label class="button-checkbox-auction button-checkbox-block" for="is_auction" onclick="toggleCheckboxAndTextColorAuction()">
+                            <input type="checkbox" id="is_auction" name="is_auction">
+                            <span class="button-text">Дом продан</span>
+                        </label><br>
+                    </div>
+
+                    <div class="input-field">
+                        <label class="button-checkbox-metro button-checkbox-block" for="is_metro" onclick="toggleCheckboxAndTextColorMetro()"">
+                            <input type="checkbox" id="is_metro" name="is_metro">
+                            <span class="button-text">Есть метро рядом</span>
+                        </label><br>
+                    </div>
+                </div>
+                <br>
+
+                <input type="number" id="m_minute" name="m_minute" min="0" step="any" placeholder="Минут до метро"><br><br>
+
+                <input type="submit" value="Отправить">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

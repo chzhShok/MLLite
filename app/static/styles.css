@@ -1,0 +1,239 @@
+/* Градиентная заливка для всего тела документа */
+body {
+    background: url('background.jpg') no-repeat center fixed;
+    background-size: cover;
+    color: #fff; /* Белый цвет текста для лучшей читаемости */
+    font-family: Arial, sans-serif; /* Установка шрифта */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: left;
+    padding: 20px 20px 20px 40px;
+    color: #0B4182;
+    font-size: 40px;
+}
+
+.h1-result{
+    text-align: center;
+    color: black;
+    font-size: 40px;
+}
+
+label {
+    display: inline-block; /* Делаем метки блочными элементами */
+    margin-bottom: 10px; /* Отступ снизу между метками */
+    font-size: 20px; /* Размер шрифта */
+    color: #000;
+}
+
+.form-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.form-header {
+    width: 45%; /* Устанавливаем ширину для заголовка */
+    text-align: center;
+    margin-right: 10px; /* Отступ справа для заголовка */
+}
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.05);
+    width: 50%; /* Устанавливаем ширину для формы */
+    margin-left: 0px; /* Отступ слева для формы */
+    height: 100vh;
+    overflow: scroll;
+}
+
+.input-fields-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-field {
+    width: 45%;
+}
+
+/* Стилизация формы */
+form {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Белый фон с прозрачностью для формы */
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Стилизация контейнера выпадающего списка */
+.select-container {
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="number"] {
+    width: 97%;
+    padding: 10px;
+    margin: 0 auto; /* Центрирование контейнера по горизонтали */
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    appearance: none; /* Убираем стандартные стили браузера */
+    -webkit-appearance: none; /* Для Safari и Chrome */
+    -moz-appearance: none; /* Для Firefox */
+    -ms-appearance: none; /* Для Internet Explorer */
+    outline: none; /* Убираем контур при фокусе */
+    font-size: 20px
+}
+
+/* Стилизация радиокнопок */
+input[type="radio"] {
+    margin-right: 10px; /* Отступ справа от радиокнопки */
+    appearance: none; /* Убираем стандартные стили браузера */
+    -webkit-appearance: none; /* Для Safari и Chrome */
+    -moz-appearance: none; /* Для Firefox */
+    -ms-appearance: none; /* Для Internet Explorer */
+    outline: none; /* Убираем контур при фокусе */
+    width: 15px; /* Устанавливаем фиксированную ширину */
+    height: 15px; /* Устанавливаем фиксированную высоту */
+    border: 2px solid #800080; /* Добавляем границу */
+    border-radius: 50%; /* Скругление границ */
+    cursor: pointer; /* Изменяем курсор на указатель при наведении */
+    transition: background-color 0.3s ease; /* Анимация изменения фона */
+}
+
+/* Стилизация радиокнопок при фокусе */
+input[type="radio"]:focus {
+    border-color: #0056b3; /* Изменяем цвет границы при фокусе */
+}
+
+/* Стилизация радиокнопок при выборе */
+input[type="radio"]:checked {
+    background-color: #800080; /* Фоновый цвет при выборе */
+}
+
+input[type="submit"] {
+    display: block;
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    background-color: #597CD1;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Стилизация контейнера выпадающего списка */
+.select-container {
+    display: flex; /* Используем Flexbox */
+    flex-direction: column; /* Выравнивание элементов в столбец */
+    align-items: flex-start; /* Выравнивание элементов по левому краю */
+    justify-content: center; /* Центрирование элементов по вертикали */
+    width: 100%; /* Устанавливаем ширину контейнера */
+    margin: 0 auto; /* Центрирование контейнера по горизонтали */
+    margin-bottom: 20px;
+    padding: 10px 0px 0px 0px;
+}
+
+/* Стилизация выпадающего списка */
+.custom-select {
+    width: 100%; /* Устанавливаем ширину выпадающего списка */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    font-size: 20px;
+    appearance: none; /* Убираем стандартные стили браузера */
+    -webkit-appearance: none; /* Для Safari и Chrome */
+    -moz-appearance: none; /* Для Firefox */
+    -ms-appearance: none; /* Для Internet Explorer */
+    outline: none; /* Убираем контур при фокусе */
+    color: rgb(169, 169, 169);
+}
+
+/* Стилизация стрелки выпадающего списка */
+.custom-select::-ms-expand {
+    display: none; /* Убираем стандартную стрелку в IE */
+}
+
+.custom-select::after {
+    content: '▼';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none; /* Стрелка не будет реагировать на клики */
+    font-size: 12px; /* Размер стрелки */
+    color: #333; /* Цвет стрелки */
+}
+
+/* Стилизация выпадающего списка при фокусе */
+.custom-select:focus {
+    border-color: #007bff; /* Цвет границы при фокусе */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Тень при фокусе */
+}
+
+/* Стилизация выпадающего списка в Safari */
+.custom-select::-ms-expand {
+    display: none; /* Убираем стандартную стрелку в IE */
+}
+
+.custom-select::-ms-value {
+    color: #333; /* Цвет текста в IE */
+}
+
+/* Стилизация выпадающего списка в Firefox */
+.custom-select::-moz-focus-inner {
+    border: 0; /* Убираем внутреннюю границу в Firefox */
+    padding: 0;
+}
+
+/* Стилизация ссылки как кнопки */
+.centered-button {
+    display: block; /* Делаем элемент блочным, чтобы можно было использовать margin: auto */
+    width: 250px; /* Устанавливаем ширину кнопки */
+    height: 20px;
+    padding: 20px 20px; /* Добавляем внутренний отступ */
+    margin: 20px auto; /* Центрируем кнопку по горизонтали */
+    color: #fff; /* Белый цвет текста */
+    background-color: #597CD1; /* Фиолетовый фон */
+    border-radius: 15px; /* Скругленные углы */
+    text-decoration: none; /* Убираем подчеркивание */
+    transition: background-color 0.3s ease; /* Анимация при наведении */
+    text-align: center; /* Центрируем текст внутри кнопки */
+    font-size: 20px;
+}
+
+.centered-button:hover {
+    background-color: #0056b3; /* Темнее фиолетовое фона при наведении */
+}
+
+.button-checkbox-block {
+    width: 90%;
+    display: inline-block;
+    background-color: #597CD1;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    transition: background-color 0.3s;
+}
+
+.button-checkbox-block:hover {
+    background-color: #0056b3;
+}
+
+.button-checkbox-block input[type="checkbox"] {
+    display: none;
+}
+
